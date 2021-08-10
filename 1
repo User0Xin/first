@@ -1,0 +1,40 @@
+#define _CRT_SECURE_NO_WARNINGS 1
+#include<stdio.h>
+int main() 
+{
+	int arr[] = { 1,2,3,4,5,6,8,9,10,11 };
+	int i = 0;
+	int k = 0;
+	int left = 0;
+	int right = 9;
+	int sz = sizeof(arr) / sizeof(arr[0]);
+	scanf("%d", &k);
+	for (i = 0; left<=right; i++)
+	{
+		int mid = (left + right) / 2;
+		int t = right - left;
+		if (arr[mid] < k)
+		{
+			left = mid + 1;
+		}
+		else if (arr[mid] > k)
+		{
+			right = mid - 1;
+		}
+		else if(arr[mid] == k)
+		{
+			printf("找到了：%d", mid);
+			break;
+		}
+		/*if (t < 1)
+		{
+			printf("找不到");
+			break;
+		}*/  //自己打的（也可用）
+	}
+	if (left > right)
+	{
+		printf("找不到");
+	}
+	return 0;
+}
