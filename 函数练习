@@ -1,0 +1,20 @@
+#define _CRT_SECURE_NO_WARNINGS 1
+#include<stdio.h>
+void Add(int* pnum)
+{
+	*pnum = *pnum + 1;
+}
+int main()
+{
+	int num = 0;
+	int k = 0;
+	int i = 0;
+	scanf("%d", &k);
+	for (i = 0; i < k; i++)
+	{
+		Add(&num);
+		printf("%d\n", num);
+	}
+		
+	return 0;
+}
