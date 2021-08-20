@@ -1,0 +1,76 @@
+#define _CRT_SECURE_NO_WARNINGS 1
+#include<stdio.h>
+#include<time.h>
+int input = 0;
+void menu()
+{
+	printf("******************************\n");
+	printf("*** Game: 1.play   0.exit  ***\n");
+	printf("******************************\n");
+}
+void game()
+{
+	int num = 0;
+	int ret = 0;
+	int i = 0;
+	int leave = 0;
+	ret = rand()%100+1;
+	printf("请在0-100间猜数字，你共有五次机会，加油！\n");
+	for (i = 0; i < 5; i++)
+	{
+		scanf("%d", &num);
+		if (num == ret)
+		{
+			printf("猜对了\n");
+			printf("是否继续游戏：1.是  0.否 \n");
+			printf("请输入：\n");
+			scanf("%d", &input);
+			break;
+		}
+		else if(i<4)
+		{
+			leave = 4 - i;
+			if (num > ret)
+			{
+				printf("猜大了，还有%d次机会\n", leave);
+			}
+			else
+			{
+				printf("猜小了，还有%d次机会\n", leave);
+			}
+		}
+		else if(i==4)
+		{
+			printf("对不起，你输了，正确数字是:%d\n", ret);
+			printf("是否继续游戏：1.是  0.否 \n");
+			printf("请输入：\n");
+			scanf("%d", &input);
+		}
+	}
+}
+int main()
+{
+	srand((unsigned int)time(NULL));
+	menu();
+	printf("请选择>:\n");
+	scanf("%d", &input);
+	do
+	{
+			switch (input)
+			{
+			case 1:
+				game();
+				break;
+			case 0:
+				printf("退出游戏\n");
+				break;
+			default:
+				printf("选择错误\n");
+				scanf("%d", &input);
+				break;
+			}
+
+	} while (input);
+	printf("游戏结束");
+	return 0;
+}
