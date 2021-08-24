@@ -1,0 +1,38 @@
+#define _CRT_SECURE_NO_WARNINGS 1
+#include<stdio.h>
+/*int my_strlen(char* str)  //一般写法
+{
+	int count = 0;
+	while (*str != '\0')
+	{
+		count++;
+		str++;
+	}
+	return count;
+}*/
+
+//my_strlen("hehe")
+//=1+ my_strlen("heh")
+//=1+1+ my_strlen("he")
+//=1+1+1+ my_strlen("h")
+//=1+1+1+1+ my_strlen("")
+//=1+1+1+1+0
+//=4
+int my_strlen(char* str)//递归写法
+{
+	if (*str != '\0')
+	{
+		return 1 + my_strlen(1 + str);
+	}
+	else
+	{
+		return 0;
+	}
+}
+int main()
+{
+	char arr[] = "hehe";
+	int len = my_strlen(arr);
+	printf("%d\n", len);
+	return 0;
+}
