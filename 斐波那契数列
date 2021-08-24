@@ -1,0 +1,34 @@
+#define _CRT_SECURE_NO_WARNINGS 1
+#include<stdio.h>
+int Fib(int x)//用递归求斐波那契数列（效率低）
+{
+	if (x > 2)
+		return Fib(x - 1) + Fib(x - 2);
+	else
+		return 1;
+	
+}
+
+int Fib2(int x)// 用迭代求斐波那契数列（效率高）
+{
+	int a = 1;
+	int b = 1;
+	int c = 1;
+	while (x > 2)
+	{
+		c = a + b;
+		a = b;
+		b = c;
+		x--;
+	}
+	return c;
+}
+int main()
+{
+	int a = 0;
+	int ret = 0;
+	scanf("%d", &a);
+	ret = Fib2(a);
+	printf("%d\n", ret);
+	return 0;
+}
