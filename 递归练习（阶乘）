@@ -1,0 +1,22 @@
+#define _CRT_SECURE_NO_WARNINGS 1
+#include<stdio.h>
+int Fac(int x)
+{
+	if (x > 1)
+		return x * Fac(x - 1);
+	else
+		return 1;
+}
+//5*4*3*2*1
+//=5*Fac(5-1)
+//=5*4*Fac(5-1-1)
+//...
+int main()
+{
+	int a = 0;
+	int ret = 0;
+	scanf("%d", &a);
+	ret = Fac(a);
+	printf("%d\n", ret);
+	return 0;
+}
