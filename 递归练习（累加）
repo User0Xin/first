@@ -1,0 +1,22 @@
+#define _CRT_SECURE_NO_WARNINGS 1
+#include<stdio.h>
+int Add(int x)
+{
+	if (x > 1)
+	{
+		return x + Add(x - 1);
+	}
+	if (x = 1)
+	{
+		return 1;
+	}
+}
+int main()
+{
+	int input = 0;
+	int sum = 0;
+	scanf("%d", &input);
+	sum=Add(input);
+	printf("%d", sum);
+	return 0;
+}
