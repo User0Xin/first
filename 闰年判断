@@ -1,0 +1,16 @@
+#define _CRT_SECURE_NO_WARNINGS 1
+#include<stdio.h>
+int main()
+{
+	int a = 0;
+	scanf("%d" ,&a);
+	if (a % 4 == 0 && a % 100 != 0)
+	{
+		printf("是闰年\n");
+	}
+	else
+	{
+		printf("不是闰年\n");
+	}
+	return 0;
+}
