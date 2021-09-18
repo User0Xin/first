@@ -1,0 +1,26 @@
+#define _CRT_SECURE_NO_WARNINGS 1
+#include<stdio.h>
+int main()
+{
+	int s = 0;
+	int v = 0;
+	int time = 0;
+	int hour = 0;
+	int minute = 0;
+	scanf("%d%d", &s, &v);
+	time =10 + s / v;
+	if (time > 32 * 60 + 10)
+	{
+		printf("不可能完成");
+		return 0;
+	}
+	hour = (32 * 60 - time) / 60;
+	minute = (32 * 60 - time) % 60;
+	if (hour >= 24)
+	{
+		hour = hour - 24;
+	}
+	printf("%d:%d", hour, minute);
+
+	return 0;
+}
