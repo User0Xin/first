@@ -1,0 +1,26 @@
+#define _CRT_SECURE_NO_WARNINGS 1
+#include<stdio.h>
+int main()
+{
+	int a = 0;
+	int i = 0;
+	int k = 0;
+	scanf("%d", &a);
+	k = (a / 100) % 10;
+	for (i = 1; i <= k; i++)
+	{
+		printf("B");
+	}
+	k = (a / 10) % 10;
+	for (i = 1; i <= k; i++)
+	{
+		printf("S");
+	}
+	k = a % 10;
+	for (i = 1; i <= k; i++)
+	{
+		printf("%d", i);
+	}
+
+	return 0;
+}
