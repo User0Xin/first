@@ -1,0 +1,15 @@
+
+#define PI 3.1415926
+#include<stdio.h>
+#include<math.h>
+int main()
+{
+	float r = 0;
+	int n = 0;
+	float s = 0;
+	scanf("%f,%d", &r, &n);
+	s = n * r * r * sin(2 * PI / n) / 2.0;
+	printf("Area=%.2f", s);
+	return 0;
+}
+
