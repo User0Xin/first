@@ -1,0 +1,22 @@
+#define PI 3.14
+#include<stdio.h>
+#include<math.h>
+int main()
+{
+	float r = 0;
+	float h = 0;
+	float C1 = 0;
+	float Sa = 0;
+	float Sb = 0;
+	float Va = 0; 
+	double Vb = 0;
+	scanf("%f%f", &r, &h);
+	C1 = PI * r * 2;
+	Sa = PI * r * r;
+	Sb = 4 * PI * r * r;
+	Va = 4 / 3.0 * PI * r * r * r;
+	Vb = PI * r * r * h;
+	printf("C1=%.2f\nSa=%.2f\nSb=%.2f\nVa=%.2f\nVb=%.2lf\n", C1, Sa, Sb, Va, Vb);
+	return 0;
+}
+
