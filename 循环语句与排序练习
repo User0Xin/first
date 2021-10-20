@@ -10,7 +10,6 @@ int main()
 	{
 		getchar();
 		char ret = 'a';
-		int i = 0;
 		if (a > b)
 		{
 			ret = a;
