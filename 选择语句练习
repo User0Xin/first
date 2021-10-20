@@ -1,0 +1,50 @@
+#include<stdio.h>
+#include<math.h>
+
+int main()
+{
+	char a = '0';
+	int num = 0;
+	scanf("%c %d", &a, &num);
+	switch (a)
+	{
+	case 'A':
+	case 'a':
+
+		printf("黑桃");
+		break;
+
+	case 'B':
+	case 'b':
+		printf("红桃");
+		break;
+	case 'c':
+	case 'C':
+		printf("梅花");
+		break;
+	case 'D':
+	case 'd':
+		printf("方块");
+		break;
+
+	}
+	switch (num)
+	{
+	case 1:
+		printf("A");
+		break;
+	case 11:
+		printf("J");
+		break;
+	case 12:
+		printf("Q");
+		break;
+	case 13:
+		printf("K");
+		break;
+	default:
+		printf("%d", num);
+		break;
+	}
+	return 0;
+}
