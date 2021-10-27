@@ -1,0 +1,59 @@
+#include<stdio.h>
+#include<stdlib.h>
+int main()
+{
+	char input;
+	printf("Menu:A(dd) D(elete) S(ort) Q(uit),select one:\n");
+	scanf("%c", &input);
+	switch (input) //利用switch语句判断
+	{
+	case 'A':
+		printf("data is added");
+		break;
+	case 'D':
+		printf("data is deleted");
+		break;
+	case 'S':
+		printf("data is sorted");
+		break;
+	case 'Q':
+		exit(0);
+		break;
+	}
+	return 0;
+}
+/*    
+改良版：（利用循环加了一种输入错误的情况，且可以重复输入）
+int main()
+{
+	char input;
+	printf("Menu:A(dd) D(elete) S(ort) Q(uit),select one:\n");
+	while(1)
+	{
+		scanf("%c", &input);
+		getchar();
+		switch (input)
+		{
+		case 'A':
+			printf("data is added\n");
+			break;
+		case 'D':
+			printf("data is deleted\n");
+			break;
+		case 'S':
+			printf("data is sorted\n");
+			break;
+		case 'Q':
+			exit(0);
+			break;
+		default:
+			printf("输入错误请重新输入：");
+			break;
+		}
+	}
+	return 0;
+}*/
+/*测试数据：A data is added
+            D data is deleted
+            S data is sorted
+			*/
