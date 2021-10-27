@@ -1,0 +1,41 @@
+#include<stdio.h>
+#include<math.h>
+
+int Gcd(int a, int b)//用于求最大公约数的函数
+{
+	int ret = 1;//定义ret用于给a，b赋值
+	while (ret)
+	{
+		ret = a % b;
+		a = b;
+		b = ret;
+	}
+	printf("%d ", a);
+	return a;
+}
+void Lcm(int a, int b,int c)//用于求最小公倍数的函数
+{
+	printf("%d", a * b / c);
+}
+int main()
+{
+	int a, b;
+	scanf("%d%d", &a, &b);
+	if (b > a) //如果b>a调换a，b
+	{
+		int x = a;
+		a = b;
+		b = x;
+	}
+	//确保a>b后进行下面操作
+	int c=Gcd(a, b);//调用函数求出a，b最大公约数并将其赋给c
+	Lcm(a, b, c);//调用函数求出a，b最小公倍数并打印
+	return 0;
+}
+
+/*
+	测试数据：
+		5 7 1 35
+		5 6 1 30
+		
+*/
