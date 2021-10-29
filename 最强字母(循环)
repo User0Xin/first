@@ -1,0 +1,41 @@
+#define _CRT_SECURE_NO_WARNINGS 1
+#include<stdio.h>
+//编写比较函数
+char PK(char a, char b)
+{
+	
+	if (a < b)
+	{
+		return a;
+	}
+	else
+	{
+		return b;
+	}
+}
+int main()
+{
+	char a = 'a';
+	char b = 'a';
+	//printf("请输入：");
+	b = getchar();
+	while (1)
+	{
+		a = getchar();
+		
+		if (a == '\n')
+		{
+			break;
+		}
+		//用函数进行比较
+		b = PK(a, b);
+	}
+	//输出
+	printf("%c", b);
+	return 0;
+}
+/*
+	测试数据：
+		chinaGOOD D
+		aaabbb   a
+*/
