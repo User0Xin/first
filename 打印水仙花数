@@ -1,0 +1,27 @@
+#define _CRT_SECURE_NO_WARNINGS 1
+#include<stdio.h>
+int main()
+{
+	int i = 1;
+	for (i = 100; i < 1000; i++)
+	{
+		//得到每个位上的数
+		int a, b, c;
+		a = i / 100;
+		b = i % 100 / 10;
+		c = i % 10;
+		//判断并输出
+		if (a * a * a +b * b * b +c * c * c == i)
+		{
+			printf("%d\n", i);
+		}
+	}
+	return 0;
+}
+/*
+	测试数据：
+		153
+        370
+        371
+        407
+*/
