@@ -1,0 +1,35 @@
+#define _CRT_SECURE_NO_WARNINGS 1
+#include<stdio.h>
+#include<math.h>
+
+int Fac(int x)//利用递归求阶乘
+{
+	if (x > 1)
+		return x * Fac(x - 1);
+	else
+		return 1;
+}
+//递归过程分析：
+//5*4*3*2*1
+//=5*Fac(5-1)
+//=5*4*Fac(5-1-1)
+//...
+int main()
+{
+	int n = 0;
+	int ret = 0;
+	int i = 1;
+	//printf("请输入n：");
+	scanf("%d", &n);
+	for (i = 1; i <= n; i++) //用循环求1！到n！的和
+	{
+		ret += Fac(i);
+	}
+	printf("%d",ret);
+	return 0;
+}
+/*
+	测试数据：
+		4 33
+		5 153
+*/
