@@ -1,0 +1,43 @@
+#define _CRT_SECURE_NO_WARNINGS 1
+#include<stdio.h>
+int main()
+{
+	int n = 0;
+	int i = 0;
+	double a = 0;
+	double b = 0;
+	double c = 0;
+	double d = 0;
+	//printf("请输入：");
+	scanf("%d",&n);//输入数据
+	scanf("%d%d", &a, &b);
+	c = b / a;//计算鸡尾酒疗法的疗效
+	for (i = 0; i < n - 1; i++)
+	{
+		scanf("%d%d", &a, &b);
+		d = b / a;
+		//判断
+		if (d - c > 0.05)
+		{
+			printf("better\n");
+		}
+		else if (d - c < -0.05)
+		{
+			printf("worse\n");
+		}
+		else
+		{
+			printf("same\n");
+		}
+	}
+	return 0;
+}
+/*
+	测试数据：
+		5
+        125 99     
+        112 89     same
+        145 99     worse
+        99 97      better
+        123 98     same
+*/
