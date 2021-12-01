@@ -1,0 +1,45 @@
+#define _CRT_SECURE_NO_WARNINGS 1
+#include<stdio.h>
+#include<string.h>
+int main()
+ {
+    int T = 0;
+    char arr1[100] = { '0' };
+    char arr2[100] = { '0' };
+    char arr3[6] = { '0' };
+    int i, j;
+    scanf("%d", &T);
+    for (i = 0; i < T; i++)
+    {
+        getchar();
+        scanf("%s", &arr1);
+        scanf("%s", &arr2);//输入字符串
+        for (j = 0; j < 3; j++)//获取前三个和后三个并赋值给arr3
+        {
+            arr3[j] = arr1[j];
+        }
+        for (j = 0; j < 3; j++)
+        {
+            arr3[j+3] = arr2[strlen(arr2)-3+j];
+        }
+        for (j = 0; j < 6; j++)//打印
+        {
+            printf("%c", arr3[j]);
+        }
+        printf("\n");
+    }
+    return 0;
+ }
+
+
+/*
+     测试数据：
+2
+china1949
+szu1983
+2012year
+day14
+
+chi983
+201y14
+*/
