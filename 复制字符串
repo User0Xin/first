@@ -1,0 +1,50 @@
+#define _CRT_SECURE_NO_WARNINGS 1
+#include<stdio.h>
+void my_strcpy(char arr1[20],char arr2[20])//自制strcpy函数
+{
+    int i = 0;
+    while (arr2[i] != '\0')
+    {
+        arr1[i] = arr2[i];
+        i++;
+    }
+    arr1[i] = arr2[i];
+}
+int main()
+ {
+    int T = 0;
+    char arr1[20] = { '0' };
+    char arr2[20] = { '0' };
+    int i=0,j=0;
+    scanf("%d", &T);
+    for (i = 0; i < T; i++)
+    {
+        scanf("%s", &arr1);//输入
+        scanf("%s", &arr2);
+        my_strcpy(arr1, arr2);//调用自制strcpy
+        j = 0;
+        while (arr1[j] != '\0')//打印
+        {
+            printf("%c", arr1[j]);
+            j++;
+        }
+        printf("\n");
+    }
+    return 0;
+ }
+
+
+/*
+     测试数据：
+3
+shenzhen
+guangzhou
+yellow
+red
+morning
+night
+
+guangzhou
+red
+night
+*/
