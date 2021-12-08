@@ -1,0 +1,23 @@
+#define _CRT_SECURE_NO_WARNINGS 1
+#include<stdio.h>
+int main()
+{
+    int n = 0;
+    int tmp = 0, x = 0, y = 0;
+    scanf("%d", &n);
+    tmp = n;
+    while(tmp != 0)
+    {
+        x = tmp % 10;
+        y = y * 10 + x;
+        tmp/=10;
+    }
+    if (y == n)
+    {
+        printf("是回文数");
+    }
+    else
+    {
+        printf("不是回文数");
+    }
+}
