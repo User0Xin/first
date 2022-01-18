@@ -1,0 +1,69 @@
+#define _CRT_SECURE_NO_WARNINGS 1
+#include<stdio.h>
+
+void select_sort(int arr[],int sz)
+{
+	int min = 0;
+	int i = 0, j = 0;
+	for (j = 0; j < sz; j++)
+	{
+		min = j;
+		for (i = min; i < sz; i++)
+		{
+			if (arr[i] < arr[min])
+			{
+				min = i;
+			}
+		}
+		int ret = 0;
+		ret = arr[j];
+		arr[j] = arr[min];
+		arr[min] = ret;
+	}
+}
+
+int main() 
+{
+	int arr[10] = { 0 };
+	int i;
+	int n = 0;
+	int t = 0;
+	int index = 0;
+	scanf("%d", &n);
+	for (i = 0; i < n; i++)
+	{
+		scanf("%d", &arr[i]);
+	}
+	select_sort(arr, n);
+	for (i = 0; i < n; i++)
+	{
+		t = t ^ arr[i];
+	}
+	while (index < 32)
+	{
+		if (t & (1 << index))//第index位是1就跳出
+		{
+			break;
+		}
+		else
+		{
+			index++;
+		}
+	}
+
+	int x = 0, y = 0;
+	for (i = 0; i < n; i++)
+	{
+		if (arr[i] & (1 << index))//分组异或
+		{
+			x ^= arr[i];
+		}
+		else
+		{
+			y ^= arr[i];
+		}
+	}
+	printf("%d %d\n", x, y);
+}
+
+
