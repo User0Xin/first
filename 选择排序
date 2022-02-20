@@ -1,0 +1,20 @@
+void select_sort(int arr[],int sz)
+{
+	int min = 0;
+	int i = 0, j = 0;
+	for (j = 0; j < sz; j++)
+	{
+		min = j;
+		for (i = min; i < sz; i++)
+		{
+			if (arr[i] < arr[min])
+			{
+				min = i;
+			}
+		}
+		int ret = 0;
+		ret = arr[j];
+		arr[j] = arr[min];
+		arr[min] = ret;
+	}
+}
